@@ -3,7 +3,7 @@
   <h3 align="center">Strips-JS-Client</h3>
 
   <p align="center">
-    A simple tool to allow the use of the STRIPS library client-side!
+    A simple tool to allow for the use of the STRIPS library client-side!
     <br />
     <a href="https://github.com/AI-Planning/strips-js-client/issues">Report Bug</a>
     ·
@@ -40,18 +40,14 @@
 
 STRIPS is an awesome library that allows us to interact with PDDL files in many useful ways. However, due to it's dependency on loading the grammar for parsing using the NPM FS library, we're unable to use it client-side within a browser. In an effort to circumvent this, I've written a script that fetches the grammar using node, then uses browserify to compile that into a file that will allow the calling of STRIPS in-browser!
 
-### Built With
-
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+### Build using
 * [Browserify](http://browserify.org/)
 * [strips](https://github.com/primaryobjects/strips)
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get up and running:
 
 ### Prerequisites
 
@@ -70,7 +66,7 @@ Ensure that both strips and Browserify are installed on your machine.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/AI-Planning/strips-js-client
    ```
 2. Give the compile.sh script execution permissions 
    ```sh
