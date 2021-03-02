@@ -106,3 +106,5 @@ dist
 # Generated files
 source.js
 strips.js
+test.js
+test.html

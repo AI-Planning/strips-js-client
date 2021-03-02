@@ -27,10 +27,21 @@ StripsManager.loadProblemString = function(problem, callback) {
 }
 
 // Loads a problem and domain string, returns the parsed JSON 
-StripsManager.loadFromString = function(problem, domain, callback) {
+StripsManager.loadFromString = function(domain, problem, callback) {
     StripsManager.loadProblemString(problem, function(problemResult) {
         StripsManager.loadDomainString(domain, function(domainResult) {
-            callback(problemResult, domainResult);
+            // Give a copy of the possible param values to the domain
+            domainResult.values = problemResult.values;
+
+            // Load list of applicable combinations of parameter values for each action.
+            for (var i in domainResult.actions) {
+                // Get all applicable parameter combinations for the current action.
+                domainResult.actions[i].parameterCombinations = StripsManager.parameterCombinations(domainResult, domainResult.actions[i]);
+            }
+
+            if (callback) {
+                callback(domainResult, problemResult);
+            }
         });
     });
 }
