@@ -5,7 +5,6 @@
   <p align="center">
     A simple tool to allow the use of the STRIPS library client-side!
     <br />
-    <br />
     <a href="https://github.com/AI-Planning/strips-js-client/issues">Report Bug</a>
     ·
     <a href="https://github.com/AI-Planning/strips-js-client/issues">Request Feature</a>
@@ -29,11 +28,8 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -90,6 +86,19 @@ Ensure that both strips and Browserify are installed on your machine.
    ```
 5. You can now include scripts that call and use the strips library      client-side!
 
+<!-- USAGE -->
+## Usage
+In your js files, usage is quite simple:
+
+The updated methods that allow for the loading of PDDL files have slightly different names for distinction.
+
+The main one is: 
+```js
+loadFromString(domain, problem, callback)
+```
+* It is used in the exact same way as the (`load`) function in the STRIPS library, with a callback that returns the parsed PDDL domain and problem as JSON objects that can be used within the library. 
+* Once parsed, the usage is exactly the same
+* Note: There is no need to (`require('strips')`) at the top of the file
 
 <!-- LICENSE -->
 ## License
