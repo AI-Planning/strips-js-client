@@ -40,7 +40,7 @@
 
 STRIPS is an awesome library that allows us to interact with PDDL files in many useful ways. However, due to it's dependency on loading the grammar for parsing using the NPM FS library, we're unable to use it client-side within a browser. In an effort to circumvent this, I've written a script that fetches the grammar using node, then uses browserify to compile that into a file that will allow the calling of STRIPS in-browser!
 
-### Build using
+### Built using
 * [Browserify](http://browserify.org/)
 * [strips](https://github.com/primaryobjects/strips)
 
@@ -95,6 +95,8 @@ loadFromString(domain, problem, callback)
 * It is used in the exact same way as the (`load`) function in the STRIPS library, with a callback that returns the parsed PDDL domain and problem as JSON objects that can be used within the library. 
 * Once parsed, the usage is exactly the same
 * Note: There is no need to (`require('strips')`) at the top of the file
+
+Currently, the function only supports domain and problem input in the form of strings, not file paths. This is due to the fact that we can't read files from the browser.
 
 <!-- LICENSE -->
 ## License
